@@ -45,8 +45,11 @@ add_executable(pserver_run ${SOURCE_FILES})
 include_directories(server)
 
 
+add_subdirectory(my)
+add_subdirectory(my_tests)
 add_subdirectory(server)
 add_subdirectory(server_tests)
+
 
 target_link_libraries(pserver_run server)
 
