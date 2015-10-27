@@ -5,7 +5,7 @@
 #ifndef CXX_STR_ALGO_H
 #define CXX_STR_ALGO_H
 
-#include <bits/stringfwd.h>
+#include <string>
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/algorithm/string/compare.hpp>
 #include <boost/algorithm/string/case_conv.hpp>
