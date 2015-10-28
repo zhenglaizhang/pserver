@@ -41,7 +41,9 @@ else ()
     message(FATAL "boost not found")
 endif ()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -stdlib=libstdc++")
+if(${MAC_OS_X})
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -stdlib=libstdc++")
+endif()
 
 set(HEADER_FILES
         time_server.h http_server.h https_server.h message_server.h response.cpp response.h RequestHandler.h)

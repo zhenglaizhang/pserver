@@ -60,7 +60,9 @@ else ()
     message(FATAL "boost not found")
 endif ()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -stdlib=libstdc++")
+if (${MAC_OS_X})
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -stdlib=libstdc++")
+endif ()
 
 set(SOURCE_FILES main.cpp)
 add_executable(pserver_run ${SOURCE_FILES})
@@ -70,9 +72,10 @@ include_directories(server)
 
 add_subdirectory(my)
 add_subdirectory(my_tests)
-add_subdirectory(server)
+#add_subdirectory(server)
+# also remove server from link_lib...
 add_subdirectory(server_tests)
 
 
-target_link_libraries(pserver_run server ${Boost_LIBRARIES})
+target_link_libraries(pserver_run ${Boost_LIBRARIES})
 
