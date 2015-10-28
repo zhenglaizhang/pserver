@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 
         boost::asio::io_service io;
         tcp::resolver resolver(io);
-        tcp::resolver::query query(argv[1], "daytime");
+        tcp::resolver::query query(argv[1], "daytime"); // daytime service maps to port 13
         tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
         tcp::socket socket(io);
         boost::asio::connect(socket, endpoint_iterator);
